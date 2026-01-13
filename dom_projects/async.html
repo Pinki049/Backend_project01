@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS with Chai our Code</h1>
+    <button id="stop">STOP</button>
+    <script>
+        setTimeout(function(){    // it will take 2 sec after that pinki will be printed
+           console.log("pinki")
+        }, 2000)
+
+        // onother way is by giving reference
+       const name = function(){
+        console.log("PINKI");
+       }
+        setTimeout(name, 2000) // given reference
+
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "JS series"
+        }
+
+       const changeMe = setTimeout(changeText, 2000)
+
+       // clearTimeout(changeMe) // to clear timeout of given reference
+        document.querySelector('#stop').addEventListener('click', function(e){
+            clearTimeout(changeMe) // stopped bt applying event on stop button
+            console.log("stopped")
+        })
+    </script>
+</body>
+</html>

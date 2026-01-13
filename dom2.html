@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM</title>
+</head>
+<!--  Created a unordered list class name 'language' -->
+<body style = "background-color: #272727; color: #fff;"> 
+    <ul class= "language">
+        <li>java</li>
+    </ul>
+</body>
+<script>
+    // Adding languages to the list 
+    function addLanguage(langName){   
+        const li = document.createElement('li');
+        li.innerHTML = langName   // using innerText or innerHTML is not optimised way to write text
+        li.style.backgroundColor = "olive"
+        li.style.padding ="20px"
+        document.querySelector('.language').appendChild(li)  // first selecting class "language" then adding li to the list 
+    }
+    addLanguage("python")  // calling fucntion 
+    addLanguage("c++")
+    addLanguage("js")
+
+    // Optimised way of adding languages to the list 
+    function addOpLang(langName){   
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOpLang('golang')
+
+    // Editing languages or elemens of list 
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "mojo"
+     const newli = document.createElement('li')  // optimised way of editing 
+     newli.textContent = "mojo"
+     secondLang.replaceWith(newli)
+
+     // removing element from the list 
+     const lastLang = document.querySelector("li:last-child")
+     lastLang.remove()
+</script>
+</html>

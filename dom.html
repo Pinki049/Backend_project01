@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>DOM</title>
+</head>
+<!-- created a parent class named "week" -->
+<body style = "background-color: #212121; color: #fff;">  
+    <div class="week">       
+    <div class="day">monday</div>
+    <div class="day">tuesday</div>  
+    <div class="day">wed</div>
+    <div class="day">thurs</div>
+    <div class="day">friday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.week')  // querySelector to select the parent to perform operation on parent 
+    console.log(parent);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML); // to print text inside children ar 1st index in parent "week"
+
+    for(let i =0; i< parent.children.length ; i++){
+        console.log(parent.children[i].innerHTML);
+    }
+    console.log("NODES:", parent.childNodes);  // nodes 
+
+    // created element in dom , here created div 
+
+    const div = document.createElement('div')
+    div.className = "created"
+    div.style.backgroundColor = "red"
+    div.style.padding ="15px"
+    const addText = document.createTextNode("JAVA")   // printed text in optimised way
+    div.appendChild(addText)  
+    document.body.appendChild(div)
+</script>
+</html>
